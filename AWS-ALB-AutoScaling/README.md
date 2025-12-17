@@ -24,7 +24,7 @@ This project demonstrates how to build a scalable AWS architecture using an **Ap
 The ALB routes traffic based on URL paths to different Target Groups.  
 Each Target Group is connected to its own Auto Scaling Group.
 
-![Architecture Diagram](/img/AWS-ALB-AutoScaling.png)
+![Architecture Diagram](./img/AWS-ALB-AutoScaling.png)
 
 ---
 
@@ -54,7 +54,7 @@ Created three Launch Templates with:
 | Laptop-LT | Laptop Page |
 | Mobile-LT | Mobile Page |
 
-![Architecture Diagram](/img/LT.png)
+![Architecture Diagram](./img/LT.png)
 ---
 
 ### Step 3️⃣: Create Target Groups
@@ -95,7 +95,7 @@ Path-based routing rules configured as:
 | `/mobile*` | Mobile-TG |
 | Default | Home-TG |
 
-![ALB Listener Rules](/img/Listener%20rules.png)
+![ALB Listener Rules](./img/Listener%20rules.png)
 
 ---
 
@@ -123,7 +123,7 @@ Path-based routing rules configured as:
   - Scale up during peak time
   - Scale down during off-hours
 
-![Mobile ASG Schedule](/img/ASG%20Sheduling.png)
+![Mobile ASG Schedule](./img/ASG%20Sheduling.png)
 
 #### 🔹 Laptop-ASG (Static Scaling)
 
@@ -132,7 +132,7 @@ Path-based routing rules configured as:
   - Min = Desired = Max = 2
 - No scaling policy attached
 
-![Architecture Diagram](/img/ASG.png)
+![Architecture Diagram](./img/ASG.png)
 
 ---
 
@@ -154,11 +154,11 @@ http://<ALB-DNS>
 http://<ALB-DNS>/laptop/
 http://<ALB-DNS>/mobile/
 ```
-![](/img/Home%20Output.png)
+![](./img/Home%20Output.png)
 
-![](/img/Laptop%20Output.png)
+![](./img/Laptop%20Output.png)
 
-![](/img/mobile%20output.png)
+![](./img/mobile%20output.png)
 
 
 ---
