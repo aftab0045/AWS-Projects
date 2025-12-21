@@ -25,7 +25,7 @@ Once the instance was running, I connected from my terminal using SSH:
 ```bash
 ssh -i "mykey.pem" ubuntu@<your-public-ip>
 ```
-![](/img/Screenshot%202025-10-10%20182348.png)
+![](./img/Screenshot%202025-10-10%20182348.png)
 
 
 ## Step 3: Install Nginx and Start the Server
@@ -60,7 +60,7 @@ http://<public-ip>:90
 ```
 And there it was my HTML page showing All International Runs of the players hosted successfully on EC2.
 
-![](/img/Screenshot%202025-10-10%20183021.png)  
+![](./img/Screenshot%202025-10-10%20183021.png)
 
 ## Final Thoughts
 This project taught me:
