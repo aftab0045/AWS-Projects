@@ -1,0 +1,214 @@
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { GraduationCap } from "lucide-react";
+import { motion } from "framer-motion";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import CursorEffect from "@/components/CursorEffect";
+
+const EducationPage = () => {
+  const education = [
+    {
+      id: 1,
+      degree: "B.E. in Computer Engineering",
+      institution: "AISSMS IOIT, Pune",
+      duration: "2021 - 2025",
+      grade: "8.95 CGPA",
+      details: [
+        "Focused on core computer science concepts and software development",
+        "Completed projects in web development and data structures",
+        "Active participant in coding competitions and hackathons"
+      ]
+    },
+    {
+      id: 2,
+      degree: "Higher Secondary Certificate (HSC)",
+      institution: "Shri Chaitanya College , Hyderabad.",
+      duration: "2019 - 2020",
+      grade: "92.90%",
+      details: []
+    },
+    {
+      id: 3,
+      degree: "Secondary School Certificate (SSC)",
+      institution: "Bharat Vidyalaya , Omerga.",
+      duration: "2017 - 2018",
+      grade: "87.20%",
+      details: []
+    },
+  ];
+
+  const certifications = [
+    {
+      id: 1,
+      title: "Subject Topper in Machine Learning",
+      provider: "AISSMS IOIT",
+      date: "2025",
+      score: "92 marks"
+    },
+    {
+      id: 2,
+      title: "Java Programming Masterclass",
+      provider: "Udemy",
+      date: "2022",
+    },
+    {
+      id: 3,
+      title: "Data Structures & Algorithms",
+      provider: "AlgoPrep",
+      date: "2023",
+    },
+    {
+      id: 4,
+      title: "React - The Complete Guide",
+      provider: "NamasteDev",
+      date: "2023",
+    },
+  ];
+
+  return (
+    <motion.div
+      className="flex flex-col min-h-screen relative"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.6 }}
+    >
+      <CursorEffect />
+      <Navbar />
+      <main className="flex-1 pt-24">
+        <section className="section-padding bg-secondary/30">
+          <div className="container mx-auto px-4">
+            <motion.h2 
+              className="section-title"
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+            >
+              Education & Certifications
+            </motion.h2>
+            
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              <motion.div 
+                className="space-y-6"
+                initial={{ opacity: 0, x: -50 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.2, duration: 0.6 }}
+              >
+                <h3 className="text-xl font-semibold mb-6 flex items-center">
+                  <GraduationCap className="mr-2 text-primary" />
+                  Academic Education
+                </h3>
+                
+                <div className="space-y-6">
+                  {education.map((edu, index) => (
+                    <motion.div
+                      key={edu.id}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.1 * index, duration: 0.5 }}
+                    >
+                      <Card className="card-hover border border-border">
+                        <CardHeader>
+                          <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-4">
+                            <div>
+                              <CardTitle>{edu.degree}</CardTitle>
+                              <CardDescription>{edu.institution}</CardDescription>
+                            </div>
+                            <div className="flex flex-wrap gap-2">
+                              <span className="text-sm bg-muted text-muted-foreground px-3 py-1 rounded-full">
+                                {edu.duration}
+                              </span>
+                              <span className="text-sm bg-primary/10 text-primary px-3 py-1 rounded-full">
+                                {edu.grade}
+                              </span>
+                            </div>
+                          </div>
+                        </CardHeader>
+                        
+                        {edu.details.length > 0 && (
+                          <CardContent>
+                            <ul className="list-disc list-inside space-y-2 text-muted-foreground">
+                              {edu.details.map((detail, idx) => (
+                                <li key={idx}>{detail}</li>
+                              ))}
+                            </ul>
+                          </CardContent>
+                        )}
+                      </Card>
+                    </motion.div>
+                  ))}
+                </div>
+              </motion.div>
+              
+              <motion.div 
+                className="space-y-6"
+                initial={{ opacity: 0, x: 50 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.3, duration: 0.6 }}
+              >
+                <h3 className="text-xl font-semibold mb-6 flex items-center">
+                  <GraduationCap className="mr-2 text-primary" />
+                  Certifications & Training
+                </h3>
+                
+                <div className="grid grid-cols-1 gap-6">
+                  {certifications.map((cert, index) => (
+                    <motion.div
+                      key={cert.id}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.1 * index, duration: 0.5 }}
+                    >
+                      <Card className="card-hover border border-border">
+                        <CardHeader>
+                          <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-4">
+                            <div>
+                              <CardTitle>{cert.title}</CardTitle>
+                              <CardDescription>{cert.provider}</CardDescription>
+                            </div>
+                            <div className="flex flex-wrap gap-2">
+                              <span className="text-sm bg-muted text-muted-foreground px-3 py-1 rounded-full">
+                                {cert.date}
+                              </span>
+                              {cert.score && (
+                                <span className="text-sm bg-primary/10 text-primary px-3 py-1 rounded-full">
+                                  {cert.score}
+                                </span>
+                              )}
+                            </div>
+                          </div>
+                        </CardHeader>
+                      </Card>
+                    </motion.div>
+                  ))}
+                </div>
+                
+                <motion.div 
+                  className="bg-card border border-border rounded-lg p-6 mt-6"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.5, duration: 0.5 }}
+                >
+                  <h4 className="font-semibold mb-4">Additional Skills</h4>
+                  <div className="flex flex-wrap gap-2">
+                    {["Git", "GitHub", "VS Code", "NPM", "REST API", "JSON", "Responsive Design", "Debugging"].map((skill) => (
+                      <span
+                        key={skill}
+                        className="px-3 py-1 bg-muted text-muted-foreground rounded-full text-sm"
+                      >
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+                </motion.div>
+              </motion.div>
+            </div>
+          </div>
+        </section>
+      </main>
+      <Footer />
+    </motion.div>
+  );
+};
+
+export default EducationPage;
