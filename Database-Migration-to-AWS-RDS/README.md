@@ -154,3 +154,4 @@ SELECT * FROM users;
 ## Conclusion
 
 This project demonstrates a manual MySQL database migration to AWS RDS, a core skill for cloud developers. The mysqldump method is simple, reliable, and perfect for small databases or learning purposes. Using AWS RDS provides scalability, reliability, and automated backups, eliminating the overhead of managing your own database server.
+
