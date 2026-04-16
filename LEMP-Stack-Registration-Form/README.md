@@ -12,6 +12,7 @@ The project focuses on **real-world deployment concepts**, including:
 
 ---
 
+
 ##  Tech Stack Used
 - **Operating System:** Linux (Amazon Linux / RHEL-based)
 - **Web Server:** Nginx
