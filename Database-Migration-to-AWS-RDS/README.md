@@ -15,6 +15,7 @@ The migration is performed manually to understand the core concepts of database 
 
 ---
 
+
 ##  Tools & Technologies Used
 - AWS EC2 (Traditional Database)
 - AWS RDS (MySQL)
