@@ -12,6 +12,7 @@ This architecture is commonly used in **microservices**, **event notifications**
 
 ---
 
+
 ##  Architecture Diagram
 
 ![SNS to SQS Architecture](./img/Architecture%20Dig.png)
