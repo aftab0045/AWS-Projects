@@ -19,6 +19,7 @@ This project demonstrates how to build a scalable AWS architecture using an **Ap
 
 ---
 
+
 ## Architecture Diagram
 
 The ALB routes traffic based on URL paths to different Target Groups.  
