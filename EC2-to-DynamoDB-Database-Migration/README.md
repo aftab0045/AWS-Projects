@@ -26,6 +26,7 @@ This project is ideal for **AWS Cloud interviews**, **hands-on practice**, and *
 
 ---
 
+
 ##  Architecture Overview
 ![](./img/EC2%20to%20DynamoDB%20Migration%20Archi.png)
 
